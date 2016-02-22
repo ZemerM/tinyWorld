@@ -1,4 +1,5 @@
 ID: tinyworld
+<<<<<<< HEAD
 description: Tiny world demo
 version: 1.0.0
 
@@ -20,6 +21,31 @@ modules:
   - name: tinyjs_api
     properties:
       service_url: ${default-url}
+=======
+version: 0.0.1
+
+modules:
+- name: tinydb
+  type: hdb
+  path: tinydb
+  requires:
+  - name: hdi-container
+
+
+- name: tinyjs
+  type: nodejs
+  path: tinyjs
+  requires:
+  - name: tinydb
+  - name: hdi-container
+  - name: tiny_uaa
+  provides:
+  - name: tinyjs_api
+    properties:
+      service_url: ${default-url}
+
+
+>>>>>>> refs/heads/master
 
 - name: tinyui
   type: html5
